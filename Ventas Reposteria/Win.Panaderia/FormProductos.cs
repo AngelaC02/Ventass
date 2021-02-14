@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Rentas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,35 @@ namespace Win.Panaderia
 {
     public partial class FormProductos : Form
     {
+        ProductosBL _productos;
+
+
         public FormProductos()
         {
             InitializeComponent();
+
+            _productos = new ProductosBL();
+            listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
+        }
+
+        private void productosBLDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productosBLBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaProductosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
