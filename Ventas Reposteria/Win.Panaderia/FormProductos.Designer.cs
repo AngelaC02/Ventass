@@ -35,7 +35,8 @@
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
-            this.productosBLBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.listaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaProductosBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -47,9 +48,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.productosBLBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productosBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaProductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaProductosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.existenciaTextBox = new System.Windows.Forms.TextBox();
@@ -60,19 +59,22 @@
             existenciaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBLBindingNavigator)).BeginInit();
-            this.productosBLBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingNavigator)).BeginInit();
+            this.listaProductosBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // productosBLBindingNavigator
+            // listaProductosBindingSource
             // 
-            this.productosBLBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productosBLBindingNavigator.BindingSource = this.productosBLBindingSource;
-            this.productosBLBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productosBLBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productosBLBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaProductosBindingSource.DataSource = typeof(BL.Rentas.Producto);
+            // 
+            // listaProductosBindingNavigator
+            // 
+            this.listaProductosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaProductosBindingNavigator.BindingSource = this.listaProductosBindingSource;
+            this.listaProductosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.listaProductosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaProductosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -84,18 +86,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.productosBLBindingNavigatorSaveItem});
-            this.productosBLBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.productosBLBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productosBLBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productosBLBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productosBLBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productosBLBindingNavigator.Name = "productosBLBindingNavigator";
-            this.productosBLBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productosBLBindingNavigator.Size = new System.Drawing.Size(574, 25);
-            this.productosBLBindingNavigator.TabIndex = 0;
-            this.productosBLBindingNavigator.Text = "bindingNavigator1";
-            this.productosBLBindingNavigator.RefreshItems += new System.EventHandler(this.productosBLBindingNavigator_RefreshItems);
+            this.listaProductosBindingNavigatorSaveItem});
+            this.listaProductosBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.listaProductosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.listaProductosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.listaProductosBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.listaProductosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.listaProductosBindingNavigator.Name = "listaProductosBindingNavigator";
+            this.listaProductosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.listaProductosBindingNavigator.Size = new System.Drawing.Size(525, 25);
+            this.listaProductosBindingNavigator.TabIndex = 0;
+            this.listaProductosBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -182,28 +183,19 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
-            // productosBLBindingNavigatorSaveItem
+            // listaProductosBindingNavigatorSaveItem
             // 
-            this.productosBLBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productosBLBindingNavigatorSaveItem.Enabled = false;
-            this.productosBLBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productosBLBindingNavigatorSaveItem.Image")));
-            this.productosBLBindingNavigatorSaveItem.Name = "productosBLBindingNavigatorSaveItem";
-            this.productosBLBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.productosBLBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
-            // productosBLBindingSource
-            // 
-            this.productosBLBindingSource.DataSource = typeof(BL.Rentas.ProductosBL);
-            // 
-            // listaProductosBindingSource
-            // 
-            this.listaProductosBindingSource.DataMember = "ListaProductos";
-            this.listaProductosBindingSource.DataSource = this.productosBLBindingSource;
+            this.listaProductosBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.listaProductosBindingNavigatorSaveItem.Enabled = false;
+            this.listaProductosBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaProductosBindingNavigatorSaveItem.Image")));
+            this.listaProductosBindingNavigatorSaveItem.Name = "listaProductosBindingNavigatorSaveItem";
+            this.listaProductosBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.listaProductosBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(89, 167);
+            activoLabel.Location = new System.Drawing.Point(30, 176);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 1;
@@ -212,7 +204,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaProductosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(161, 162);
+            this.activoCheckBox.Location = new System.Drawing.Point(102, 170);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 2;
@@ -221,7 +213,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(89, 87);
+            descripcionLabel.Location = new System.Drawing.Point(30, 92);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
             descripcionLabel.TabIndex = 3;
@@ -230,15 +222,15 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(161, 84);
+            this.descripcionTextBox.Location = new System.Drawing.Point(102, 92);
             this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(241, 20);
+            this.descripcionTextBox.Size = new System.Drawing.Size(332, 20);
             this.descripcionTextBox.TabIndex = 4;
             // 
             // existenciaLabel
             // 
             existenciaLabel.AutoSize = true;
-            existenciaLabel.Location = new System.Drawing.Point(89, 139);
+            existenciaLabel.Location = new System.Drawing.Point(30, 147);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(58, 13);
             existenciaLabel.TabIndex = 5;
@@ -247,15 +239,15 @@
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(161, 136);
+            this.existenciaTextBox.Location = new System.Drawing.Point(102, 144);
             this.existenciaTextBox.Name = "existenciaTextBox";
-            this.existenciaTextBox.Size = new System.Drawing.Size(241, 20);
+            this.existenciaTextBox.Size = new System.Drawing.Size(332, 20);
             this.existenciaTextBox.TabIndex = 6;
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(89, 61);
+            idLabel.Location = new System.Drawing.Point(30, 69);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(19, 13);
             idLabel.TabIndex = 7;
@@ -264,15 +256,15 @@
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(161, 58);
+            this.idTextBox.Location = new System.Drawing.Point(102, 66);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(241, 20);
+            this.idTextBox.Size = new System.Drawing.Size(332, 20);
             this.idTextBox.TabIndex = 8;
             // 
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(89, 113);
+            precioLabel.Location = new System.Drawing.Point(30, 121);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(40, 13);
             precioLabel.TabIndex = 9;
@@ -281,16 +273,16 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductosBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(161, 110);
+            this.precioTextBox.Location = new System.Drawing.Point(102, 118);
             this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.Size = new System.Drawing.Size(241, 20);
+            this.precioTextBox.Size = new System.Drawing.Size(332, 20);
             this.precioTextBox.TabIndex = 10;
             // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 342);
+            this.ClientSize = new System.Drawing.Size(525, 343);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionLabel);
@@ -301,16 +293,15 @@
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(precioLabel);
             this.Controls.Add(this.precioTextBox);
-            this.Controls.Add(this.productosBLBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.listaProductosBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productosBLBindingNavigator)).EndInit();
-            this.productosBLBindingNavigator.ResumeLayout(false);
-            this.productosBLBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productosBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingNavigator)).EndInit();
+            this.listaProductosBindingNavigator.ResumeLayout(false);
+            this.listaProductosBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,8 +309,8 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource productosBLBindingSource;
-        private System.Windows.Forms.BindingNavigator productosBLBindingNavigator;
+        private System.Windows.Forms.BindingSource listaProductosBindingSource;
+        private System.Windows.Forms.BindingNavigator listaProductosBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -331,8 +322,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton productosBLBindingNavigatorSaveItem;
-        private System.Windows.Forms.BindingSource listaProductosBindingSource;
+        private System.Windows.Forms.ToolStripButton listaProductosBindingNavigatorSaveItem;
         private System.Windows.Forms.CheckBox activoCheckBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox existenciaTextBox;
