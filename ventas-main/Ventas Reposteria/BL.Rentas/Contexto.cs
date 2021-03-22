@@ -1,12 +1,16 @@
-﻿using BL.Rentas;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BL.Rentas
 {
-    public class Contexto : DbContext
+     public class Contexto: DbContext
     {
-        public Contexto() : base("VideoJuegos")
+        public Contexto(): base("VideoJuegos")
         {
 
         }
@@ -16,11 +20,6 @@ namespace BL.Rentas
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-
         public DbSet<Producto> Productos { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Tipo> Tipos { get; set; }
-        
-       
     }
 }
