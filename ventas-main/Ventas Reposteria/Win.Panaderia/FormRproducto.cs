@@ -16,10 +16,5 @@ namespace Win.Panaderia
         {
             InitializeComponent();
         }
-
-        private void FormRproducto_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
