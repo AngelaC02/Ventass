@@ -83,9 +83,9 @@ namespace Win.Panaderia
 
         private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formRproducto = new FormRproducto();
-            formRproducto.MdiParent = this;
-            formRproducto.Show();
+            var formReporteProductos = new FormReporteProductos();
+            formReporteProductos.MdiParent = this;
+            formReporteProductos.Show();
         }
 
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +111,31 @@ namespace Win.Panaderia
         private void FormMenu_Load(object sender, EventArgs e)
         {
             login();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formFactura = new FormFactura();
+            formFactura.MdiParent = this;
+            formFactura.Show();
+
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reporteDeFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formReporteFacturas = new FormReporteFacturas();
+            formReporteFacturas.MdiParent = this;
+            formReporteFacturas.Show();
         }
     }
 }
